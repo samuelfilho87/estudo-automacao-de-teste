@@ -10,7 +10,7 @@ npm install
 # ou
 yarn install
 ```
-Utiliza um dos comandos para rodar os testes:
+Utilizar um dos comandos para rodar os testes:
 
 ```bash
 npm test
