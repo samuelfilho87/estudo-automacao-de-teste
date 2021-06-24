@@ -1,23 +1,18 @@
-import Numero from '../ex2NumeroFeliz/Numero';
+import NumeroMultiplo from './NumeroMultiplo';
+
 
 export default class Multiplos {
-  private limite: number;
-
-  public constructor(limite: number) {
-    this.limite = limite;
-  }
-
   public removerMultiplosRepetidos(multiplos: number[]): number[] {
     const aux: number[] = Array.from(new Set(multiplos));
 
     return aux;
   }
 
-  public pegarMultiplos(multiplicador: number): number[] {
+  public pegarMultiplos(multiplicador: number, limite: number): number[] {
     const multiplos: number[] = [];
 
-    for (let i = 1; i < this.limite; i++) {
-      if (Numero.ehMultiplo(i, multiplicador)) {
+    for (let i = 1; i < limite; i++) {
+      if (NumeroMultiplo.checar(i, multiplicador)) {
         multiplos.push(i);
       }
     }

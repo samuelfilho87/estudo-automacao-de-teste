@@ -15,10 +15,6 @@ export default class Carrinho {
     return this.usuario;
   }
 
-  public setUsuario(usuario: Usuario): void {
-    this.usuario = usuario;
-  }
-
   public getValorTotal(): number {
     let soma: number = 0;
 
@@ -45,18 +41,22 @@ export default class Carrinho {
     return true;
   }
 
-  public addProduto(produto: Produto): boolean {
+  public indexDoItem(nomeProduto: String): number {
     for (let i = 0; i < this.itens.length; i++) {
-      if (this.itens[i].getProduto().getNome() === produto.getNome()) {
-        this.itens[i].addQuantidade();
-
-        return true;
+      if (this.itens[i].getProduto().getNome() === nomeProduto) {
+        return i;
       }
     }
 
-    this.itens.push(new Item(produto, 1));
+    return -1;
+  }
 
-    return true;
+  public addProduto(produto: Produto): void {
+    const indexItem: number = this.indexDoItem(produto.getNome());
+
+    indexItem > -1 ?
+      this.itens[indexItem].addQuantidade() :
+      this.itens.push(new Item(produto, 1));
   }
 
   public addProdutos(produtos: Produto[]): boolean {

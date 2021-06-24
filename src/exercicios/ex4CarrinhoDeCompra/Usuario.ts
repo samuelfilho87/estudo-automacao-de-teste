@@ -11,15 +11,7 @@ export default class Usuario {
     return this.nome;
   }
 
-  public setNome(nome: String): void {
-    this.nome = nome;
-  }
-
   public getCep(): String {
     return this.cep;
-  }
-
-  public setCep(cep: String): void {
-    this.cep = cep;
   }
 }

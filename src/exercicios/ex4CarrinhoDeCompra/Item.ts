@@ -13,16 +13,8 @@ export default class Item {
     return this.produto;
   }
 
-  public setProduto(produto: Produto): void {
-    this.produto = produto;
-  }
-
   public getQuantidade(): number {
     return this.quantidade;
-  }
-
-  public setQuantidade(quantidade: number): void {
-    this.quantidade = quantidade;
   }
 
   public addQuantidade(): void {

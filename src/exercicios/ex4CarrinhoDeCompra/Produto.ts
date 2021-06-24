@@ -11,15 +11,7 @@ export default class Produto {
     return this.nome;
   }
 
-  public setNome(nome: String): void {
-    this.nome = nome;
-  }
-
   public getValor(): number {
     return this.valor;
-  }
-
-  public setValor(valor: number): void {
-    this.valor = valor;
   }
 }

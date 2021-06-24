@@ -51,7 +51,7 @@ describe('Exercício 4 - Carrinho', () => {
 
     expect(resultado).toBe(1);
   });
-
+  
   it('adicionar novo produto ao carrinho', () => {
     carrinho.addProduto(produto1);
     carrinho.addProduto(produto2);
@@ -59,6 +59,23 @@ describe('Exercício 4 - Carrinho', () => {
     const resultado: number = carrinho.getItens().length;
 
     expect(resultado).toBe(2);
+  });
+
+  it('produto existe no carrinho', () => {
+    carrinho.addProduto(produto1);
+    carrinho.addProduto(produto2);
+
+    const resultado: number = carrinho.indexDoItem(produto2.getNome());
+
+    expect(resultado).toBe(1);
+  });
+
+  it('produto não existe no carrinho', () => {
+    carrinho.addProduto(produto1);
+
+    const resultado: number = carrinho.indexDoItem(produto2.getNome());
+
+    expect(resultado).toBe(-1);
   });
 
   it('remover quantidade de produto do carrinho', () => {
